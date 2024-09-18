@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import ThemeToggler from "./ThemeToggler";
 import menuData from "./menuData";
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 
 const Header = () => {
   // Navbar toggle
@@ -76,21 +77,27 @@ const Header = () => {
                 </nav>
               </div>
               <div className="flex items-center justify-end pr-16 lg:pr-0">
-                <Link
-                  href="/signin"
+              <SignedOut>
+            <SignInButton ><Link
+                  href="/sign-in"
                   className="hidden px-7 py-3 text-base font-medium text-dark hover:opacity-70 dark:text-white md:block"
                 >
                   Sign In
-                </Link>
+                </Link></SignInButton>
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
+                
                 <Link
                   href="/signup"
                   className="rounded-md bg-gradient-to-r from-indigo-500 to-purple-500 px-7 py-3 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"
                 >
                   Sign Up
                 </Link>
-                <div>
+                {/* <div>
                   <ThemeToggler />
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

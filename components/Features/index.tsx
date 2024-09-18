@@ -6,7 +6,7 @@ const Features = () => {
   return (
     <>
       <section id="features" className="pb-8 md:pb-10 lg:pb-14">
-        <div className="w-full h-16 md:h-20 lg:h-28" style={{ background: 'linear-gradient(#221f4a, #00040f)' }}></div>
+        <div className="w-full h-16 md:h-20 lg:h-28" style={{ background: 'linear-gradient(#221f4a, #0a0a0a)' }}></div>
         <div className="container mt-10 grid grid-cols-1 gap-x-8 gap-y-6  md:grid-cols-[2fr,1fr] lg:grid-cols-[1.5fr,1fr]">
 
           <div>
