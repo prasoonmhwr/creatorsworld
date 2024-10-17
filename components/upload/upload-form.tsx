@@ -5,6 +5,7 @@ import { Button } from '../ui/button'
 import { z } from 'zod'
 import { useToast } from '@/hooks/use-toast';
 import { useUploadThing } from '@/utils/uploadthing'; 
+import { generateBlogAction, transcribeUploadedFile } from '@/actions/upload-actions';
 
 const schema = z.object({
     file: z.instanceof(File, { message: "Invalid file" })
@@ -35,8 +36,37 @@ export default function UploadForm() {
         }
 
         if(file){
-            const resp =await startUpload([file])
+            const resp: any = await startUpload([file])
             console.log(resp)
+
+            if(!resp){
+                toast({
+                    title: 'Somethign went wrong',
+                    description: 'Please use a different file',
+                    variant: 'destructive'
+                })
+            }
+
+            const result = await transcribeUploadedFile(resp)
+
+            const { data = null, message = null } = result || {}
+
+            if( !result || (!data && !message)){
+                toast({
+                    title: 'An unexpected error',
+                    description: 'An error occured during transcription. Please try again.',
+                    variant: 'destructive'
+                })
+            }
+
+            if(data){
+                // loading for generating blog post
+
+                await generateBlogAction({
+                    transcriptions: data.transcriptions,
+                    userId: data.userId
+                })
+            }
         }
     }
     return (
