@@ -5,7 +5,7 @@ import { Button } from '../ui/button'
 import { z } from 'zod'
 import { useToast } from '@/hooks/use-toast';
 import { useUploadThing } from '@/utils/uploadthing'; 
-import { generateBlogAction, transcribeUploadedFile } from '@/actions/upload-actions';
+import { generateBlogPostAction, transcribeUploadedFile } from '@/actions/upload-actions';
 
 const schema = z.object({
     file: z.instanceof(File, { message: "Invalid file" })
@@ -62,7 +62,7 @@ export default function UploadForm() {
             if(data){
                 // loading for generating blog post
 
-                await generateBlogAction({
+                await generateBlogPostAction({
                     transcriptions: data.transcriptions,
                     userId: data.userId
                 })

@@ -9,7 +9,7 @@ import {
   getPlanType,
   hasCancelledSubscription,
   updateUser,
-} from "@/lib/user-helpers";
+} from "@/lib/user-helper";
 import { currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 
