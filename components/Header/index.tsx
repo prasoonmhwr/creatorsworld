@@ -58,7 +58,7 @@ const Header = () => {
                 } `}
               >
                 <span>
-                  CreatorsWorld
+                 <img src="/images/main_full.png" width={500} height={500}/>
                 </span>
               </Link>
             </div>

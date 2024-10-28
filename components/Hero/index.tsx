@@ -30,15 +30,15 @@ const Hero = () => {
           <Canvas shadows camera={ { fov: 30, near: 0.1, far: 500, position: [ 0, 7, 25 ] } } style={{ height: canvasHeight , width: canvasWidth}}>
             <Experience />
           </Canvas>
-          <div className="container">
+          <div className="container max-w-[1252px]">
           <div className=" flex flex-wrap absolute z-1 top-8 pt-[120px]   md:pt-[150px]  xl:pt-[180px]  2xl:pt-[440px] ">
-            <div className="w-full px-4">
+            <div className="w-full max-w-[1252px] px-4">
               <div className=" max-w-[550px] text-left">
                 <h1 className="mb-5 text-3xl font-bold leading-tight text-black dark:text-white md:text-3xl sm:leading-tight lg:text-7xl md:leading-tight text-left">
-                Revolutionize your developer presence
+                Revolutionize Your Creator Journey
                 </h1>
                 <p className="mb-12 text-base !leading-relaxed text-body-color dark:text-body-color-dark sm:text-lg md:text-xl text-left">
-                  We abstract away the need for you to focus on social media presence, so you can focus on your craft
+                Turn your video content into compelling blog posts instantly. Break content boundaries, reach new audiences, and scale your influence without the extra hours.
                 </p>
                 <div className="flex flex-col items-center justify-left space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
                   <Link
