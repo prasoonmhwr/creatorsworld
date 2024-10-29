@@ -58,7 +58,7 @@ const Header = () => {
                 } `}
               >
                 <span>
-                 <img src="/images/main_full.png" width={500} height={500}/>
+                 <Image alt="logo" src="/images/main_large.png" width={800} height={900}/>
                 </span>
               </Link>
             </div>

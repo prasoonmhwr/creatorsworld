@@ -4,7 +4,7 @@ const SingleFeature = ({ feature }: { feature: Feature }) => {
   const { icon, title, paragraph } = feature;
   return (
     <div className="w-full flex justify-around">
-      <div className="wow fadeInUp w-[470px] p-2.5 rounded-2xl" data-wow-delay=".15s" style={{background:"linear-gradient(116deg, #35333D, #171320,#171320) "}}>
+      <div className="wow fadeInUp w-[470px] p-2.5 rounded-2xl" data-wow-delay=".15s" style={{background:"linear-gradient(116deg, #362244, #211738,#171320) "}}>
         <div className="w-full flex items-center h-28">
         <div className="mx-1 flex h-[64px] w-[71px] items-center justify-center rounded-full text-amber-300 ">
           {icon}
