@@ -21,6 +21,9 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Creator's World",
   description: "A tool to help creators save time",
+  icons: {
+    icon: "/images/meta.png",
+  }
 };
 
 export default function RootLayout({
