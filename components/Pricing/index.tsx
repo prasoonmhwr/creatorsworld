@@ -5,6 +5,7 @@ import clsx from "clsx";
 import CountUp from "react-countup";
 import { plansMap as plans } from "@/lib/constants";
 import Button from "@/components/Button"
+import Link from "next/link";
 
 const Pricing = () => {
   const [monthly, setMonthly] = useState(false);
@@ -148,7 +149,14 @@ const Pricing = () => {
                 </ul>
 
                 <div className="mt-10 flex w-full justify-center">
-                  <Button markerFill={"#fcd34d"}>Get Started</Button>
+                  <Button markerFill={"#fcd34d"}>
+                  <Link
+                        href={plan.paymentLink}
+                        className="flex gap-1 items-center"
+                      >
+                        Get Started 
+                      </Link>
+                  </Button>
                 </div>
 
                 {index === 1 && (

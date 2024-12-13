@@ -8,10 +8,10 @@ export const plansMap = [
       priceMonthly: 10,
       priceYearly:120,
       features: ["3 Blog Posts", "3 Transcription"],
-      paymentLink: "https://buy.stripe.com/test_aEU9D35X65fH0MMeUW",
+      paymentLink: "https://rzp.io/rzp/eZowq3s",
       priceId:
         process.env.NODE_ENV === "development"
-          ? "price_1PtLVqBPnsISnc82CW4au1uq"
+          ? "plink_PF8rdI5kArVuvv"
           : "",
     },
     {
@@ -20,13 +20,13 @@ export const plansMap = [
       logo:'',
       title:'Pro',
       caption: "All Blog Posts, let’s go!",
-      priceMonthly: 19.99,
+      priceMonthly: 2600,
       priceYearly: 239.88,
       features: ["Unlimited Blog Posts", "Unlimited Transcriptions"],
-      paymentLink: "https://buy.stripe.com/test_cN26qRclufUl9jibIL",
+      paymentLink: "https://rzp.io/rzp/GwhsFhG",
       priceId:
         process.env.NODE_ENV === "development"
-          ? "price_1PtLVqBPnsISnc82bspCVu5e"
+          ? "plink_PWafORCiy4rrnC"
           : "",
     },
     {
@@ -38,10 +38,10 @@ export const plansMap = [
         priceMonthly: 15,
         priceYearly: 180,
         features: ["6 Blog Posts", "6 Transcription"],
-        paymentLink: "https://buy.stripe.com/test_cN26qRclufUl9jibIL",
+        paymentLink: "https://rzp.io/rzp/IkhLB7Mm",
         priceId:
           process.env.NODE_ENV === "development"
-            ? "price_1PtLVqBPnsISnc82bspCVu5e"
+            ? "plink_PF8uKHF0iKUqDF"
             : "",
       },
   ];

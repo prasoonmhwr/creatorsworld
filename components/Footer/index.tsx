@@ -138,7 +138,7 @@ const Footer = () => {
 
           <div className="h-px w-full bg-gradient-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]"></div>
           <div className="py-8 flex justify-between">
-            <div className="text-neutral-500">Copyright 2024 CreatorsWorld. All Rights Reserved.</div>
+            <div className="text-neutral-500">Copyright {new Date().getFullYear()} CreatorsWorld. All Rights Reserved.</div>
             <div className="text-neutral-500 pr-20">
               <div className="flex items-center">
                
