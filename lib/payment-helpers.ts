@@ -67,7 +67,7 @@ async function insertPayment(
       INSERT INTO payments (
         amount, 
         status, 
-        razorpay_payment_id, 
+        rp_payment_id, 
         plan_id, 
         user_email
       ) VALUES (

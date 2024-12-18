@@ -6,8 +6,9 @@ import OpenAI from "openai";
 
 const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
+    project: "proj_Vug7K1fhBDeVqLgDYe5a5WL2"
 });
-
+console.log(openai)
 export async function transcribeUploadedFile(
     resp: {
         serverData: { userId: string; file: any };
@@ -37,11 +38,14 @@ export async function transcribeUploadedFile(
     }
 
     const response = await fetch(fileUrl);
-
+    const blob = await response.blob();
+        
+        // Create a File object
+        const file = new File([blob], fileName, { type: blob.type });
     try {
         const transcriptions = await openai.audio.transcriptions.create({
             model: "whisper-1",
-            file: response,
+            file: file,
         });
 
         console.log({ transcriptions });

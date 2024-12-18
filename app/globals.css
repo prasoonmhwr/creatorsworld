@@ -207,6 +207,68 @@ body {
   .body-3 {
     @apply text-[16px] leading-[28px] tracking-[0.02em];
   }
+  .basic{
+    position: absolute;
+    top: -16px;
+    align-self: flex-start;
+    font-size: 9rem;
+    font-weight: 900;
+    display: flex;
+    flex-direction: column;
+    max-width: 97px;
+    overflow: clip;
+    word-wrap: break-word;
+    font-family: sans-serif;
+    line-height: 8rem;
+    margin-left: -34px;
+  }
+  .basic-parent{
+    background: linear-gradient(to right, #fcd34d, #fcd34da6, transparent, transparent, transparent, transparent);
+    position:relative;
+    overflow:hidden;
+  }
+
+  .pro{
+    position: absolute;
+    align-self: flex-start;
+    font-size: 9rem;
+    font-weight: 900;
+    display: flex;
+    flex-direction: column;
+    max-width: 107px;
+    overflow: clip;
+    word-wrap: break-word;
+    font-family: sans-serif;
+    margin-left: -34px;
+    justify-content: center;
+  }
+
+  .pro-parent{
+    background: linear-gradient(to right, #c8ea80, #c8ea80a6, transparent, transparent, transparent, transparent);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .mid-parent{
+    
+    background: linear-gradient(to right, #0ea5e9, #0ea5e9a6, transparent, transparent, transparent, transparent);
+    position: relative;
+    overflow: hidden;
+  }
+  .mid{
+    position: absolute;
+    align-self: flex-start;
+    font-size: 9rem;
+    font-weight: 900;
+    display: flex;
+    flex-direction: column;
+    max-width: 107px;
+    overflow: clip;
+    word-wrap: break-word;
+    font-family: sans-serif;
+    margin-left: -34px;
+    justify-content: center;
+  }
 }
 
 

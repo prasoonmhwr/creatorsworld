@@ -12,6 +12,7 @@ import {
 } from "@/lib/user-helper";
 import { currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
+import { relative } from "path";
 
 export default async function Dashboard() {
   const clerkUser = await currentUser();
@@ -50,21 +51,22 @@ export default async function Dashboard() {
   // check number of posts per plan
   const posts = await sql`SELECT * FROM posts WHERE user_id = ${userId}`;
 
-  const isValidBasicPlan = isBasicPlan && posts.length < 3;
+  const isValidBasicPlan = true //isBasicPlan && posts.length < 3;
 
   return (
       <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
-        <div className="flex flex-col items-center justify-center gap-6 text-center">
-          <Badge className="bg-gradient-to-r from-purple-700 to-pink-800 text-white px-4 py-1 text-lg font-semibold capitalize">
+        <div className="flex flex-col items-center justify-center gap-6 text-center pro-parent" >
+        <div className="pro">BASIC</div>
+          {/* <Badge className="bg-amber-300 text-white px-4 py-1 text-lg font-semibold capitalize">
             {planTypeName} Plan
-          </Badge>
+          </Badge> */}
 
-          <h2 className="capitalize text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h2 className="capitalize text-3xl py-8 font-bold tracking-tight text-slate-50 sm:text-4xl">
             Start creating amazing content
           </h2>
 
-          <p className="mt-2 text-lg leading-8 text-gray-600 max-w-2xl text-center">
-            Upload your audio or video file and let our AI do the magic!
+          <p className="mt-2 text-lg leading-8 text-neutral-400 max-w-2xl text-center">
+            Upload your audio or video file and let AI do the magic!
           </p>
 
           {(isBasicPlan || isProPlan) && (

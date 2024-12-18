@@ -1,11 +1,12 @@
 'use client';
-import React from 'react'
+import React, { useState } from 'react'
 import { Input } from '../ui/input'
 import { Button } from '../ui/button'
 import { z } from 'zod'
 import { useToast } from '@/hooks/use-toast';
 import { useUploadThing } from '@/utils/uploadthing'; 
 import { generateBlogPostAction, transcribeUploadedFile } from '@/actions/upload-actions';
+import { FileUpload } from '../ui/file-upload';
 
 const schema = z.object({
     file: z.instanceof(File, { message: "Invalid file" })
@@ -13,6 +14,11 @@ const schema = z.object({
         .refine((file)=> file.type.startsWith('audio/') || file.type.startsWith('video/'), 'File must be an audio or a video file')
 })
 export default function UploadForm() {
+    const [files, setFiles] = useState<File[]>([]);
+  const handleFileUpload = (files: File[]) => {
+    setFiles(files);
+    console.log(files);
+  };
     const {toast} = useToast()
     const {startUpload} = useUploadThing("videoOrAudioUploader", {
         onClientUploadComplete: () => {
@@ -26,8 +32,8 @@ export default function UploadForm() {
         },
       })
     async function handleTranscribe(formData: FormData){
-        const file = formData.get('file') as File;
-
+        const file = files[0]
+        console.log(files[0])
         const validatedFields = schema.safeParse({file});
         
         if(!validatedFields.success){
@@ -71,8 +77,9 @@ export default function UploadForm() {
     }
     return (
         <form action={handleTranscribe}>
-            <div className="flex justify-end items-center gap-1.5">
-                <Input id="file" type="file" name='file' accept='audio/*,video/*' required />
+            <div className="flex justify-end items-center flex-col gap-1.5">
+                {/* <Input id="file" type="file" name='file' accept='audio/*,video/*' required /> */}
+                <FileUpload  onChange={handleFileUpload} />
                 <Button>Transcribe</Button>
             </div>
         </form>
